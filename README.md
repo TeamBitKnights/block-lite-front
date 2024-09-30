@@ -1,73 +1,66 @@
-# ethereum-lite-explorer-frontend
+# block-lite-frontend
 
-## Description
+## 설명
 
-This project is an open-source block explorer on EVM chain. If you follow this repository, you can run explorer in localhost. This repository provides [crawling code](https://github.com/Generation-Foundation/ethereum-lite-explorer-crawling) and [backend code](https://github.com/Generation-Foundation/ethereum-lite-explorer-back) for Explorer, and you can find frontend code in this repository.
+이 프로젝트는 EVM 체인에서 작동하는 오픈소스 블록 탐색기입니다. 이 저장소를 사용하면 로컬에서 탐색기를 실행할 수 있습니다. [크롤링 코드](https://github.com/KAPUIST/block-lite-crawler)와 [백엔드 코드](https://github.com/KAPUIST/block-lite-back)가 제공되며, 이 저장소에서는 프론트엔드 코드를 제공합니다.
 
-## Preview
+## 시작하기
 
-<img width="800" alt="image" src="https://user-images.githubusercontent.com/93761302/208592091-dd02cd8d-2962-4362-b070-f4397db626d5.png">
-<img width="800" alt="image" src="https://user-images.githubusercontent.com/93761302/208592404-dc90629a-72e0-4629-8ab0-b624b2c1ed68.png">
-<img width="800" alt="image" src="https://user-images.githubusercontent.com/93761302/208592500-f9ff0923-e5ca-47bc-93f9-dc3aa13f402e.png">
+### 서버 설정
 
-## Getting Started
+- **아래 링크를 따라 서버를 단계별로 설정하세요.**
+- 첫 번째로, 크롤링 서버와 데이터베이스를 설정합니다.
+  - <https://github.com/KAPUIST/block-lite-crawler>
+- 두 번째로, 백엔드 서버를 설정합니다.
+  - <https://github.com/KAPUIST/block-lite-back>
 
-### Setting up Server
+### 설치 방법
 
-- **Go to the link below to set up server step by step.**
-- First, set up Crawling server and Database
-  - <https://github.com/Generation-Foundation/ethereum-lite-explorer-crawling>
-- Second, set up Backend server
-  - <https://github.com/Generation-Foundation/ethereum-lite-explorer-back>
+**위 서버 설치가 완료된 후 다음 작업을 설치하세요.**
 
-### Installing
-
-**After the above server installation is complete, install the following tasks**
-
-- Git clone this repo
+- 이 저장소를 Git 클론하세요.
 
 ```bash
-git clone https://github.com/Generation-Foundation/ethereum-lite-explorer-front.git
+git clone https://github.com/KAPUIST/block-lite-front
 ```
 
-- **On macOS and Ubuntu**, create `.env` to set GENERATE_SOURCEMAP
+- **macOS 및 Ubuntu에서는** `.env` 파일을 생성하여 `GENERATE_SOURCEMAP`을 설정하세요.
 
 ```env
 GENERATE_SOURCEMAP=false
 ```
 
-- **On Window**, modify `package.json` to set GENERATE_SOURCEMAP
+- **Windows에서는** `package.json`을 수정하여 `GENERATE_SOURCEMAP`을 설정하세요.
 
 ```javascript
   "scripts": {
-    "start": ""set \"GENERATE_SOURCEMAP=false\" && node scripts/start.js",
-    "build": ""set \"GENERATE_SOURCEMAP=false\" && node scripts/build.js",
+    "start": "set \"GENERATE_SOURCEMAP=false\" && node scripts/start.js",
+    "build": "set \"GENERATE_SOURCEMAP=false\" && node scripts/build.js",
     "test": "node scripts/test.js"
   },
 ```
 
-- Modify 'baseURL' in `/src/redux/reducer/etherApi.js` to your blockchain RPC URL
+- `/src/redux/reducer/etherApi.js`에서 'baseURL'을 사용 중인 블록체인 RPC URL로 변경하세요.
 
 ```javascript
 import axios from 'axios';
 
 const etherApi = axios.create({
-  //change your blockchain rpc url
+  //블록체인 RPC URL 변경
   baseURL: 'https://eth.public-rpc.com',
-  //baseURL : "https://testnet-rpc-seoul.gen.foundation",
   headers: { 'content-type': 'application/json' },
 });
 
 export default etherApi;
 ```
 
-- Modify 'baseURL' in `/src/redux/reducer/dbApi.js` to your backend server
+- `/src/redux/reducer/dbApi.js`에서 'baseURL'을 사용 중인 백엔드 서버로 변경하세요.
 
 ```javascript
 import axios from 'axios';
 
 const dbApi = axios.create({
-  //change your backend server
+  //백엔드 서버 URL 변경
   baseURL: 'http://localhost:3001',
   headers: { 'content-type': 'application/json' },
 });
@@ -75,25 +68,15 @@ const dbApi = axios.create({
 export default dbApi;
 ```
 
-- Run it local with the following command
+- 아래 명령어로 로컬에서 실행하세요.
 
 ```bash
 npm install --save
 npm start
 ```
 
-### Deploy
+**로컬에서 실행할 경우, 다음 포트에서 진행됩니다.**
 
-Deployed using AWS amplify.
-
-```bash
-npm run build
-```
-
-### Architecture
-
-**If running only on localhost, it will proceed on the following ports.**
-
-- Front - http://localhost:3000
-- Back - http://localhost:3001
-- Crawling - http://localhost:3006
+- 프론트엔드 - http://localhost:3000
+- 백엔드 - http://localhost:3001
+- 크롤링 서버 - http://localhost:3006
