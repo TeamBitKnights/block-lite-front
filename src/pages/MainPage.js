@@ -126,7 +126,7 @@ const Main = () => {
           <div className="blockInfoSection1">
             <div className="block-col1">
               <div className="block-col1-row1">
-                <h1>KAPU Price</h1>
+                <h1>AVAX Price</h1>
                 {tokenData != null ? <h3>$ {tokenData.last}</h3> : null}
               </div>
               <div className="block-col1-row2">
@@ -156,7 +156,7 @@ const Main = () => {
             </div>
             <div className="block-col3">
               <div className="block-col3-row1">
-                <h1>KAPU Transactions History</h1>
+                <h1>AVAX Transactions History</h1>
               </div>
               <div className="block-col3-row2">
                 {chartWeeklyTxsByDate != null ? (
@@ -273,13 +273,13 @@ const Main = () => {
                           <div className="triangle-main"> </div>
                           {(parseInt(datas.value, 16) / 10 ** 18).toFixed(4) ==
                           0 ? (
-                            <p>0 KAPU</p>
+                            <p>0 AVAX</p>
                           ) : (
                             <p>
                               {(parseInt(datas.value, 16) / 10 ** 18).toFixed(
                                 4
                               )}{' '}
-                              KAPU
+                              AVAX
                             </p>
                           )}
                         </div>

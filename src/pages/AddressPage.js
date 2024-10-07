@@ -122,7 +122,7 @@ const AddressPage = () => {
               <div className="addressData-col1">
                 <div className="addressData-col1-title">Balance</div>
               </div>
-              <div className="addressData-col2">{accountBalance} KAPU</div>
+              <div className="addressData-col2">{accountBalance} AVAX</div>
             </div>
           </div>
           {/* <div className="addressDataInfo2">
@@ -210,7 +210,7 @@ const AddressPage = () => {
                         </td>
                         <td className="td-right">
                           {parseInt(data.value, 16) / 10 ** 18}
-                          &nbsp;KAPU
+                          &nbsp;AVAX
                         </td>
                       </tr>
                     );

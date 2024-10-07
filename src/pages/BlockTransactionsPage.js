@@ -108,7 +108,7 @@ const BlockTransactionsPage = () => {
                         </span>
                       </td>
                       <td className="td-right">
-                        {parseInt(data.value, 16) / 10 ** 18} KAPU
+                        {parseInt(data.value, 16) / 10 ** 18} AVAX
                       </td>
                     </tr>
                   );
