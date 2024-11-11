@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { dbLatestBlocks } from '../redux/action/dbLatestBlocks';
 import { dbLatestTxs } from '../redux/action/dbLatestTxs';
 import { dbTotalTxsNum } from '../redux/action/dbTotalTxsNum';
-import { getTokenData } from '../redux/action/getTokenData';
+//import { getTokenData } from '../redux/action/getTokenData';
 import { Chart } from '../components/_index';
 import { dbAddressArr } from '../redux/action/dbAddressArr';
 import { dbChartWeeklyTxsByDate } from '../redux/action/dbChartWeeklyByDate';
@@ -26,7 +26,7 @@ const Main = () => {
   } = useSelector((state) => state.mainpageData);
 
   const getCardSectionFunc = () => {
-    dispatch(getTokenData.getTokenDataApi());
+    // dispatch(getTokenData.getTokenDataApi());
     dispatch(dbTotalTxsNum.dbTotalTxsNumApi());
     dispatch(dbAddressArr.dbAddressArrApi());
     dispatch(dbLatestBlocks.dbLatestBlocksApi());
@@ -143,7 +143,7 @@ const Main = () => {
               </div>
               <div className="block-col2-row2">
                 <h1>Latest Block</h1>
-                {latestBlocks != null ? (
+                {latestBlocks && latestBlocks.length ? (
                   <h3>#{latestBlocks[0].blocknumber}</h3>
                 ) : null}
               </div>
@@ -174,7 +174,7 @@ const Main = () => {
           <div className="card-header">
             <h1>Latest Block</h1>
           </div>
-          {latestBlocks != null ? (
+          {latestBlocks && latestBlocks.length ? (
             <>
               {latestBlocks.map((datas, index) => {
                 return (
