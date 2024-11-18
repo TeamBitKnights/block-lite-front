@@ -2,7 +2,7 @@
 
 ## 설명
 
-이 프로젝트는 EVM 체인에서 작동하는 오픈소스 블록 탐색기입니다. 이 저장소를 사용하면 로컬에서 탐색기를 실행할 수 있습니다. [크롤링 코드](https://github.com/KAPUIST/block-lite-crawler)와 [백엔드 코드](https://github.com/KAPUIST/block-lite-back)가 제공되며, 이 저장소에서는 프론트엔드 코드를 제공합니다.
+이 프로젝트는 EVM 체인에서 작동하는 오픈소스 블록 탐색기입니다. 이 저장소를 사용하면 로컬에서 탐색기를 실행할 수 있습니다. [크롤링 코드](https://github.com/TeamOliveCode/block-lite-crawler)와 [백엔드 코드](https://github.com/TeamOliveCode/block-lite-back)가 제공되며, 이 저장소에서는 프론트엔드 코드를 제공합니다.
 
 ## 시작하기
 
@@ -10,9 +10,9 @@
 
 - **아래 링크를 따라 서버를 단계별로 설정하세요.**
 - 첫 번째로, 크롤링 서버와 데이터베이스를 설정합니다.
-  - <https://github.com/KAPUIST/block-lite-crawler>
+  - <https://github.com/TeamOliveCode/block-lite-crawler>
 - 두 번째로, 백엔드 서버를 설정합니다.
-  - <https://github.com/KAPUIST/block-lite-back>
+  - <https://github.com/TeamOliveCode/block-lite-back>
 
 ### 설치 방법
 
@@ -21,7 +21,7 @@
 - 이 저장소를 Git 클론하세요.
 
 ```bash
-git clone https://github.com/KAPUIST/block-lite-front
+https://github.com/TeamOliveCode/block-lite-front.git
 ```
 
 - **macOS 및 Ubuntu에서는** `.env` 파일을 생성하여 `GENERATE_SOURCEMAP`을 설정하세요.
