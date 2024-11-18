@@ -130,7 +130,7 @@ const AllTransactionPage = () => {
                         </span>
                       </td>
                       <td className="td-right">
-                        {parseInt(data.value, 16) / 10 ** 18} AVAX
+                        {parseInt(data.value, 16) / 10 ** 18} GEE
                       </td>
                     </tr>
                   );
