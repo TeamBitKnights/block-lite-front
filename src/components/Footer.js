@@ -56,13 +56,13 @@ const Footer = () => {
           <div className="footer-col">
             <h3>Contact Us</h3>
             <ul>
-              <li>contact@gen.foundation</li>
+              <li>contact@geeblock.foundation</li>
             </ul>
           </div>
         </div>
       </div>
       <div className="foo">
-        Copyright © 2022. GENERATION. All Rights Reserved.
+        Copyright © 2024. GeeBlock. All Rights Reserved.
       </div>
     </footer>
   );
