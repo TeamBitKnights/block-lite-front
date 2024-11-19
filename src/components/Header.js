@@ -32,7 +32,7 @@ const Header = () => {
       <div className="logo">
         <Link to="/">
           <img
-            style={{ width: 210, height: 36 }}
+            style={{ height: 48 }}
             alt="Generation"
             src={Generation_logo}
             onClick={() => toggleBtnOff()}
