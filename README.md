@@ -21,7 +21,7 @@
 - 이 저장소를 Git 클론하세요.
 
 ```bash
-https://github.com/TeamOliveCode/block-lite-front.git
+git clone https://github.com/TeamOliveCode/block-lite-front.git
 ```
 
 - **macOS 및 Ubuntu에서는** `.env` 파일을 생성하여 `GENERATE_SOURCEMAP`을 설정하세요.
